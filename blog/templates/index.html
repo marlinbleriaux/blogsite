@@ -1,0 +1,28 @@
+{%  extends 'blog/base.html ' %}
+
+
+
+{% block title %} blog {% endblock %}
+    
+
+{% block body %} 
+
+    <h1> Articles</h1>
+
+
+   {%  for post in posts %}
+         <article> 
+
+            <h2 class="title">
+                <a href="{% url 'blog:show' post.id %}">   - {{ post.title|upper }}</a> 
+            </h2>
+            <p class="time"> <time "> Posted created at {% now "Y-m-d H:i" %}</time></p>
+            <p class="content">   {{ post.body }}  </p>
+         </article>
+
+
+
+       
+    {% endfor %}
+{% endblock %}
+

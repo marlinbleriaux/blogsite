@@ -1,0 +1,16 @@
+{%  extends 'blog/base.html ' %}
+
+{% block title %} Blog  |{{post.title}} {% endblock %}
+
+{% block body %} 
+
+
+    <article> 
+        <h1 class="title">{{ post.title }}</h1>
+        <p class="content"> {{ post.body }} </p>
+    </article>
+  
+
+    <p><a href=" {% url 'blog:index' %}"> All posts👈 </a></p>
+
+{% endblock %} 
