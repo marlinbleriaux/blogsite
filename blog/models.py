@@ -4,7 +4,7 @@ from datetime import datetime
 class TimespamtedModel(models.Model):
     creative_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
-
+   
     class Meta:
         abstract = True
 
@@ -13,6 +13,7 @@ class Post(TimespamtedModel):
     title= models.CharField(max_length=255)
     body= models.TextField()
     
+
     def __str__(self):
         return self.title
 
